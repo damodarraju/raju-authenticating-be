@@ -3,7 +3,6 @@ const app = express();
 const fs = require("fs");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const serverless = require("serverless");
 
 require("dotenv/config");
 app.use(cors());
@@ -105,4 +104,4 @@ app.put(`/ticket/delete`, async (req, res) => {
 	});
 });
 
-export const handler = serverless(app);
+app.listen(process.env.PORT, "0.0.0.0");
